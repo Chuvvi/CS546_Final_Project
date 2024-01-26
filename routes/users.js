@@ -332,7 +332,7 @@ router.post('/editprofile', async (req, res) => {
         }
         if (Object.keys(updateParams).length === 0) return res.status(400).render('render/editProfile', { class: "error", msg: "Nothing to update." });
         let result = await users.updateUser(updateParams, req.session.user);
-        return res.status(200).render('render/editprofile', { msg: "Successfully updated personal information." })
+        return res.status(200).render('render/editProfile', { msg: "Successfully updated personal information." })
     } catch (e) {
         return res.status(400).render('render/editProfile', { class: "error", msg: e });
     }
